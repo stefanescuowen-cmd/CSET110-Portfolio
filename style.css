@@ -10,7 +10,7 @@ body{
     color: white;
 }
 
-/* Navbar */
+/* Navbar & Header */
 header{
     display: flex;
     justify-content: space-between;
@@ -41,6 +41,33 @@ header{
     color: orange;
 }
 
+/* sections */
+
+article{
+    padding: 3rem 2rem;
+}
+
+article h2{
+    font-size: 2rem;
+    color: orange;
+    margin-bottom: 1rem;
+}
+
+article p, a{
+    color: #ddd;
+}
+
+.project-grid{
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3 ease;
+}
+
+.project:hover{
+    transform: translateY(-5px);
+}
+
 /* Hamburger Icon */
 
 .hamburger{
@@ -58,6 +85,24 @@ header{
     background-color: white;
     border-radius: 2px;
     transition: all 0.3 ease;
+}
+
+/* Home */
+
+.intro{
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.section-title{
+    font-size: 3rem;
+    color: orange;
+    margin-bottom: 0.5rem;
+}
+
+.section-subtitle{
+    font-size: 1.5rem;
+    color: #aaa;
 }
 
 /* Mobile Styles */
