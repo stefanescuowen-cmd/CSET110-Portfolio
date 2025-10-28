@@ -205,7 +205,34 @@ article p, a{
 
 /* Contact */
 
-/* ADD CONTENT HERE */
+.contact-methods{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item{
+    flex: 1 1 200px;
+    background-color: #1a1a1a;
+    padding: 1.5rem;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3 ease;
+}
+
+.contact-item:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 165, 0, 0.3);
+}
+
+.contact-item p a{
+    color: #ddd;
+    transition: color 0.3s;
+}
+
+.contact-item p a:hover{
+    color: orange;
+}
 
 
 /* Footer */
@@ -263,5 +290,11 @@ footer{
     /* Work */
         .project-grid{
             grid-template-columns: 1fr;
+        }
+
+    /* Contact */
+        .contact-methods{
+            flex-direction: column;
+            align-items: center;
         }
     }
