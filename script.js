@@ -1,11 +1,24 @@
-// Hamburger Menu
+// Sidebar for mobile devices
 
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const sidebar = document.getElementById('sidebar-menu');
+    const closeBtn = sidebar.querySelector('.close-btn');
 
-if (hamburger && navLinks){
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navLinks.classList.toggle('active');
+    hamburger.addEventListener('click', () => {
+        sidebar.classList.add('active');
+    });
+
+    closeBtn.addEventListener('click', () => {
+        sidebar.classList.remove('active');
+    });
 });
+
+
+// Logo is unclickable on homepage, but on any other page
+// it shall take you to it.
+
+const logo = document.querySelector('.logo a');
+if (window.location.pathname.endsWith("index.html")){
+    logo.removeAttribute('href');
 }

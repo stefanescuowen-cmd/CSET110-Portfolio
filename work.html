@@ -8,9 +8,11 @@
     <link rel="icon" type="image/png" href="os-logo.png">
 </head>
 <body>
+</head>
+<body>
     <header>
         <div class="logo">
-            <img src="os-logo.png" alt="logo">
+            <a href="index.html"><img src="os-logo.png" alt="logo"></a>
         </div>
 
         <div class="hamburger" id="hamburger">
@@ -20,12 +22,27 @@
         </div>
         
         <nav>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="contact.html">Contact</a></li>
+             
+            <!-- Desktop links -->
+            
+            <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="work.html" class="active">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
             </ul>
+
+            <!-- Sidebar for mobile -->
+
+            <div id="sidebar-menu">
+                <button class="close-btn" id="sidebar-links">&times</button>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="work.html" class="active">Work</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+            </ul>
+            </div>
         </nav>
     </header>
 
@@ -33,137 +50,113 @@
         <h2 class="section-title">
             Projects
         </h2>
-            
 
-        <div class="project-card">
-        <div class="project-inner">
-        <div class="project-front">
-        <img src="creepy-quiz.jpg" alt="Creepy Quiz">
-        </div>
-        <div class="project-back">
-            <h3>Creepy Quiz</h3>
-            <p>A fun and eerie interactive quiz project.</p>
-            <a href="https://stefanescuowen-cmd.github.io/CSET105-Final/project2/index.html" target="_blank" class="project-card btn">View Project</a>
-        </div>
-        </div>
-        </div>
+        <div class="project-grid">
 
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="creepy-quiz.jpg" alt="Creepy Quiz">
+            </div>
+            <div class="project-back">
+                <h3>Creepy Quiz</h3>
+                <p>A fun and eerie interactive quiz project.</p>
+                <a href="https://stefanescuowen-cmd.github.io/CSET105-Final/project2/index.html" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
-        <div class="project-card">
-        <div class="project-inner">
-        <div class="project-front">
-        <img src="grocery-list.jpg" alt="Grocery List">
-        </div>
-        <div class="project-back">
-            <h3>Grocery List</h3>
-            <p>description</p>
-            <a href="https://stefanescuowen-cmd.github.io/CSET105-Final/project1/index.html" target="_blank" class="project-card project-card btn">View Project</a>
-        </div>
-        </div>
-        </div>
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="grocery-list.jpg" alt="Grocery List">
+            </div>
+            <div class="project-back">
+                <h3>Grocery List</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/CSET105-Final/project1/index.html" target="_blank" class="project-card project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="tic-tac-toe.jpg" alt="Creepy Quiz">
+            </div>
+            <div class="project-back">
+                <h3>Tic-Tac-Toe</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/Final-CSET115/" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
-        <div class="project-card">
-        <div class="project-inner">
-        <div class="project-front">
-        <img src="tic-tac-toe.jpg" alt="Creepy Quiz">
-        </div>
-        <div class="project-back">
-            <h3>Tic-Tac-Toe</h3>
-            <p>description</p>
-            <a href="https://stefanescuowen-cmd.github.io/Final-CSET115/" target="_blank" class="project-card btn">View Project</a>
-        </div>
-        </div>
-        </div>
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="rock-paper-scissors.jpg" alt="Rock Paper Scissors">
+            </div>
+            <div class="project-back">
+                <h3>Rock Paper Scissors</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/Assignment2-CSET105/" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="calculator.jpg" alt="Creepy Quiz">
+            </div>
+            <div class="project-back">
+                <h3>Calculator</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/Assignment1-CSET115/" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
-        <div class="project-card">
-        <div class="project-inner">
-        <div class="project-front">
-        <img src=".jpg" alt="Creepy Quiz">
-        </div>
-        <div class="project-back">
-            <h3>title</h3>
-            <p>description</p>
-            <a href="" target="_blank" class="project-card btn">View Project</a>
-        </div>
-        </div>
-        </div>
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="omnifood.jpg" alt="Creepy Quiz">
+            </div>
+            <div class="project-back">
+                <h3>Omnifood Recreation</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/project1-110/" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="the-generics.jpg" alt="The Generics (shopping cart JS integration)">
+            </div>
+            <div class="project-back">
+                <h3>The Generics (Shopping Cart JS Integration)</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/Assignment2-CSET110/store.html" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
 
-        <div class="project-card">
-        <div class="project-inner">
-        <div class="project-front">
-        <img src=".jpg" alt="Creepy Quiz">
+            <div class="project-card">
+            <div class="project-inner">
+            <div class="project-front">
+            <img src="mustacchio.jpg" alt="Mustaccio">
+            </div>
+            <div class="project-back">
+                <h3>Mustaccio Website Recreation (3/5 Pages)</h3>
+                <p>description</p>
+                <a href="https://stefanescuowen-cmd.github.io/assignment1-cset110/index.html" target="_blank" class="project-card btn">View Project</a>
+            </div>
+            </div>
+            </div>
         </div>
-        <div class="project-back">
-              <h3>title</h3>
-            <p>description</p>
-            <a href="" target="_blank" class="project-card btn">View Project</a>
-        </div>
-        </div>
-        </div>
-
-        <div class="project-card">
-        <div class="project-inner">
-        <div class="project-front">
-        <img src="" alt="Creepy Quiz">
-        </div>
-        <div class="project-back">
-             <h3>title</h3>
-            <p>description</p>
-            <a href="" target="_blank" class="project-card btn">View Project</a>
-        </div>
-        </div>
-        </div>
-            <!-- <a href="https://stefanescuowen-cmd.github.io/Final-CSET115/" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>Tic-Tac-Toe</h3>
-            <p>
-                description
-            </p>
-
-            <a href="https://stefanescuowen-cmd.github.io/CSET105-Final/project1/index.html" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>Grocery List</h3>
-            <p>
-                description
-            </p>
-
-            <a href="https://stefanescuowen-cmd.github.io/CSET105-Final/project2/index.html" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>Creepy Quiz</h3>
-            <p>
-                description
-            </p>
-
-            <a href="https://stefanescuowen-cmd.github.io/Assignment2-CSET105/" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>Rock Paper Scissors</h3>
-            <p>
-                description
-            </p>
-
-            <a href="https://stefanescuowen-cmd.github.io/Assignment2-CSET105/" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>Calculator</h3>
-            <p>
-                description
-            </p>
-
-            <a href="https://stefanescuowen-cmd.github.io/Assignment2-CSET110/store.html" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>The Generics (shopping cart JS integration)</h3>
-            <p>
-                description
-            </p>
-            
-            <a href="https://stefanescuowen-cmd.github.io/assignment1-cset110/index.html" target="_blank" class="project-card"></a>
-            <img src="" alt="">
-            <h3>Mustaccio website recreation (3/5 pages)</h3>
-            <p>
-                description
-            </p> -->
 
         <div class="github-link">
             <p>View all projects on my GitHub:</p>
@@ -172,7 +165,9 @@
     </article>
 
     <footer>
-        <p>&copy 2025 Owen Stefanescu | Software Developer</p>
+        <p>717-405-0072
+        <br>stefanescuowen@gmail.com
+        <br>Copyright &copy; 2025 Owen Stefanescu | Software Developer</p>
     </footer>
     <script src="script.js"></script>
 </body>
