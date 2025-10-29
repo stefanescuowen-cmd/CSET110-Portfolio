@@ -82,7 +82,7 @@ header{
     height: 100%;
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     background-color: #111;
     display: flex;
     flex-direction: column;
@@ -104,7 +104,13 @@ header{
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    padding-left: 2rem;
+    padding-left: 0;
+    text-align: center;
+}
+
+#sidebar-menu ul li{
+    margin: 0;
+    padding: 0;
 }
 
 #sidebar-menu ul li a{
@@ -199,6 +205,54 @@ article p, a{
     color: #aaa;
 }
 
+.homepage-previews{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 3rem 1rem;
+    text-align: center;
+}
+
+.preview-card{
+    background-color: #1a1a1a;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.preview-card:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+}
+
+.preview-card h3{
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: orange;
+}
+
+.preview-card p{
+    color: #ccc;
+    margin-bottom: 1/25rem;
+}
+
+.preview-card .btn{
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    background-color: orange;
+    color: #111;
+    text-align: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.preview-card .btn:hover{
+    background-color: #ffa733;
+}
+
 
 /* About Me */
 
@@ -220,6 +274,10 @@ article p, a{
 
 .bio{
     flex: 1;
+}
+
+.bio p{
+    text-align: left;
 }
 
 .skills{
@@ -265,7 +323,7 @@ article p, a{
 }
 
 .education li{
-    list-style-type: none;
+    margin-top: 1.5rem;
 }
 
 /* Work */
