@@ -335,6 +335,25 @@ article p, a{
     margin: 0 auto;
 }
 
+.education ul{
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    padding: 1rem 1.5rem;
+    color: #ddd;
+    margin: 0 auto 1rem auto;
+    max-width: 100%;
+    width: 100%;
+    color: #ddd;
+    font-size: 0.95rem;
+    line-height: 1.3rem;
+    box-sizing: border-box
+    
+}
+
+.education li{
+    margin-bottom: 0.5rem;
+}
+
 .skill-list li:hover{
     transform: translateY(-3px);
     transition: background-color 0.3s ease, transform 0.3s ease;
@@ -639,10 +658,12 @@ footer a:hover{
             font-size: 0.9rem;
         }
 
-        .experience-card, .education{
-            padding: 0.8rem 1rem;
-            font-size: 0.9rem;
+        .experience-card, .education ul{
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 1rem auto;
         }
+        
 
     /* Work */
         .project-grid{
