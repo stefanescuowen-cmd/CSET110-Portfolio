@@ -22,3 +22,12 @@ const logo = document.querySelector('.logo a');
 if (window.location.pathname.endsWith("index.html")){
     logo.removeAttribute('href');
 }
+
+
+// Back to top button
+
+const goTopBtn = document.getElementById("goTopBtn")
+
+goTopBtn.addEventListener("click", () =>{
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
