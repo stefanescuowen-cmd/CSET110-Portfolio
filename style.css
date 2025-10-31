@@ -199,19 +199,53 @@ article p, a{
 /* Home */
 
 .intro{
+    position: relative;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    margin: 0 auto;
+    padding: 2rem;
+}
+
+.intro::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.8)),
+    url("owen.jpg") center/cover no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-position: fixed;
+    opacity: 0.6;
+    filter: grayscale(30%) contrast(1.1);
+    z-index: -1;
 }
 
 .section-title{
     font-size: 3rem;
     color: orange;
-    margin-bottom: 0.75rem;
+    margin-bottom: 1.25rem;
 }
 
 .section-subtitle{
     font-size: 1.5rem;
     color: #aaa;
+}
+
+.intro-text{
+    color: #ccc;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.intro h1,
+.intro p{
+    animation: fadeInIntro 1s ease forwards
 }
 
 .homepage-previews{
