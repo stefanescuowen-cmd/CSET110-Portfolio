@@ -6,14 +6,12 @@
     <title>Owen's Portfolio | Contact</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-   <link rel="icon" type="image/png" href="os-logo.png">
+    <link rel="icon" type="image/png" href="os-logo.png">
 </head>
-<body>
-  </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="os-logo.png" alt="logo"></a>
+            <a href="index.html"><img src="os-logo.png" alt="Owen Stefanescu logo"></a>
         </div>
 
         <div class="hamburger" id="hamburger">
@@ -21,76 +19,65 @@
             <span class="bar"></span>
             <span class="bar"></span>
         </div>
-        
+
         <nav>
-             
-            <!-- Desktop links -->
-            
             <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Me</a></li>
-                    <li><a href="work.html">Work</a></li>
-                    <li><a href="contact.html" class="active">Contact</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="work.html">Work</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
 
-            <!-- Sidebar for mobile -->
-
             <div id="sidebar-menu">
-                <button class="close-btn" id="sidebar-links">&times</button>
+                <button class="close-btn" id="sidebar-links">&times;</button>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="work.html">Work</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
+                </ul>
             </div>
         </nav>
     </header>
 
-    <article class="contact">
-        <h2 class="section-title">
-            Get in Touch
-        </h2>
-        <p class="section-subtitle">
-            Send me a message or connect through social platforms.
-        </p>
+    <main>
+        <article class="contact">
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">
+                I am based in East Petersburg, PA and open to summer IT, tech, and software development opportunities.
+            </p>
 
-        <form action="mailto:stefanescuowen@gmail.com" method="post">
-            <input type="text" placeholder="Name" name="Name" id="name" required>
+            <div class="contact-details">
+                <a href="tel:7174050072"><i class="fa-solid fa-phone"></i> 717-405-0072</a>
+                <a href="mailto:stefanescuowen@gmail.com"><i class="fa-solid fa-envelope"></i> stefanescuowen@gmail.com</a>
+                <a href="https://github.com/stefanescuowen-cmd" target="_blank"><i class="fab fa-github"></i> GitHub Portfolio</a>
+                <a href="https://www.linkedin.com/in/owen-stefanescu-281a72396/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            </div>
 
-            <input type="email" placeholder="Email" name="Email" id="email" required>
-
-            <textarea placeholder="Message" rows="5" name="message" id="message" required></textarea>
-
-            <button type="submit" id="submit">Send Message</button>
-        </form>
-    </article>
-
+            <form action="mailto:stefanescuowen@gmail.com" method="post">
+                <input type="text" placeholder="Name" name="Name" id="name" required>
+                <input type="email" placeholder="Email" name="Email" id="email" required>
+                <textarea placeholder="Message" rows="5" name="message" id="message" required></textarea>
+                <button type="submit" id="submit">Send Message</button>
+            </form>
+        </article>
+    </main>
 
     <footer>
         <a href="tel:7174050072">717-405-0072</a>
         <a href="mailto:stefanescuowen@gmail.com">stefanescuowen@gmail.com</a>
-        <p>Copyright &copy; 2025 Owen Stefanescu | Software Developer</p>
-        
-        <!-- socials -->
-        
-        <div class="social-icons">
+        <p>Copyright &copy; 2026 Owen Stefanescu | Software Developer</p>
 
+        <div class="social-icons">
             <a href="https://github.com/stefanescuowen-cmd" target="_blank" aria-label="GitHub">
                 <i class="fab fa-github"></i>
             </a>
-            
-
             <a href="https://www.linkedin.com/in/owen-stefanescu-281a72396/" target="_blank" aria-label="LinkedIn">
                 <i class="fab fa-linkedin"></i>
             </a>
-
-
             <a href="https://www.facebook.com/profile.php?id=100068802948973" target="_blank" aria-label="Facebook">
                 <i class="fab fa-facebook"></i>
             </a>
-
-
         </div>
     </footer>
     <script src="script.js"></script>

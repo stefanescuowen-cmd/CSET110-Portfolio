@@ -3,15 +3,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.getElementById('sidebar-menu');
-    const closeBtn = sidebar.querySelector('.close-btn');
+    const closeBtn = sidebar ? sidebar.querySelector('.close-btn') : null;
 
-    hamburger.addEventListener('click', () => {
-        sidebar.classList.add('active');
-    });
+    if (hamburger && sidebar) {
+        hamburger.addEventListener('click', () => {
+            sidebar.classList.add('active');
+        });
+    }
 
-    closeBtn.addEventListener('click', () => {
-        sidebar.classList.remove('active');
-    });
+    if (closeBtn && sidebar) {
+        closeBtn.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+        });
+    }
 });
 
 
@@ -20,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const logo = document.querySelector('.logo a');
 if (window.location.pathname.endsWith("index.html")){
-    logo.removeAttribute('href');
+    if (logo) {
+        logo.removeAttribute('href');
+    }
 }
 
 
@@ -28,6 +34,8 @@ if (window.location.pathname.endsWith("index.html")){
 
 const goTopBtn = document.getElementById("goTopBtn")
 
-goTopBtn.addEventListener("click", () =>{
-    window.scrollTo({ top: 0, behavior: "smooth" });
-});
+if (goTopBtn) {
+    goTopBtn.addEventListener("click", () =>{
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+}
