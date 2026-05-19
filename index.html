@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owen's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="os-logo.png">
+    <link rel="icon" type="image/png" href="assets/images/os-logo.png">
 </head>
 <body>
     <header>
         <div class="logo">
-            <img src="os-logo.png" alt="Owen Stefanescu logo">
+            <img src="assets/images/os-logo.png" alt="Owen Stefanescu logo">
         </div>
 
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </div>
+        </button>
 
         <nav>
             <ul class="nav-links">
@@ -28,13 +28,16 @@
                 <li><a href="contact.html">Contact</a></li>
             </ul>
 
-            <div id="sidebar-menu">
-                <button class="close-btn" id="sidebar-links">&times;</button>
+            <div id="sidebar-menu" aria-hidden="true">
+                <a href="index.html" class="mobile-menu-logo" aria-label="Home">
+                    <img src="assets/images/os-logo.png" alt="Owen Stefanescu logo">
+                </a>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="work.html">Work</a></li>
                     <li><a href="contact.html">Contact</a></li>
+                    <li><a href="assets/docs/owen-stefanescu-resume-portfolio.pdf" download>Resume</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,7 +55,61 @@
             </p>
             <div class="hero-actions">
                 <a href="work.html" class="btn">View Projects</a>
+                <a href="assets/docs/owen-stefanescu-resume-portfolio.pdf" class="btn btn-secondary" download>
+                    <i class="fa-solid fa-download"></i> Resume PDF
+                </a>
                 <a href="contact.html" class="btn btn-secondary">Contact Me</a>
+            </div>
+        </article>
+
+        <article class="project-showcase" aria-label="Featured project slideshow">
+            <div class="showcase-copy">
+                <p class="eyebrow">Featured Work</p>
+                <h2>Project Snapshot</h2>
+                <p>Browse a few screenshots from my coursework and portfolio projects.</p>
+            </div>
+
+            <div class="slideshow" data-slideshow>
+                <button class="slide-control prev-slide" type="button" aria-label="Previous project">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </button>
+
+                <div class="slide-track">
+                    <figure class="slide active">
+                        <img src="assets/images/wacky-burger.jpg" alt="Wacky Burger website screenshot">
+                        <figcaption>
+                            <strong>Wacky Burger</strong>
+                            <span>Collaborative multi-page website</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="assets/images/tic-tac-toe.jpg" alt="Tic-Tac-Toe game screenshot">
+                        <figcaption>
+                            <strong>Tic-Tac-Toe</strong>
+                            <span>JavaScript win-condition logic</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="assets/images/calculator.jpg" alt="Calculator project screenshot">
+                        <figcaption>
+                            <strong>Calculator</strong>
+                            <span>HTML, CSS, and JavaScript events</span>
+                        </figcaption>
+                    </figure>
+                    <figure class="slide">
+                        <img src="assets/images/rock-paper-scissors.jpg" alt="Rock Paper Scissors game screenshot">
+                        <figcaption>
+                            <strong>Rock Paper Scissors</strong>
+                            <span>Interactive browser game</span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <button class="slide-control next-slide" type="button" aria-label="Next project">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </button>
+
+                <div class="slide-dots" aria-label="Choose project slide"></div>
             </div>
         </article>
 
@@ -97,6 +154,7 @@
             </a>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <div class="cursor-shadow" aria-hidden="true"></div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>

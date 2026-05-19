@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Owen's Portfolio | Contact</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="os-logo.png">
+    <link rel="icon" type="image/png" href="assets/images/os-logo.png">
 </head>
 <body>
     <header>
         <div class="logo">
-            <a href="index.html"><img src="os-logo.png" alt="Owen Stefanescu logo"></a>
+            <a href="index.html"><img src="assets/images/os-logo.png" alt="Owen Stefanescu logo"></a>
         </div>
 
-        <div class="hamburger" id="hamburger">
+        <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
             <span class="bar"></span>
             <span class="bar"></span>
             <span class="bar"></span>
-        </div>
+        </button>
 
         <nav>
             <ul class="nav-links">
@@ -28,13 +28,16 @@
                 <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
 
-            <div id="sidebar-menu">
-                <button class="close-btn" id="sidebar-links">&times;</button>
+            <div id="sidebar-menu" aria-hidden="true">
+                <a href="index.html" class="mobile-menu-logo" aria-label="Home">
+                    <img src="assets/images/os-logo.png" alt="Owen Stefanescu logo">
+                </a>
                 <ul class="nav-links" id="nav-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Me</a></li>
                     <li><a href="work.html">Work</a></li>
                     <li><a href="contact.html" class="active">Contact</a></li>
+                    <li><a href="assets/docs/owen-stefanescu-resume-portfolio.pdf" download>Resume</a></li>
                 </ul>
             </div>
         </nav>
@@ -52,6 +55,7 @@
                 <a href="mailto:stefanescuowen@gmail.com"><i class="fa-solid fa-envelope"></i> stefanescuowen@gmail.com</a>
                 <a href="https://github.com/stefanescuowen-cmd" target="_blank"><i class="fab fa-github"></i> GitHub Portfolio</a>
                 <a href="https://www.linkedin.com/in/owen-stefanescu-281a72396/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="assets/docs/owen-stefanescu-resume-portfolio.pdf" download><i class="fa-solid fa-file-arrow-down"></i> Download Resume</a>
             </div>
 
             <form action="mailto:stefanescuowen@gmail.com" method="post">
@@ -80,6 +84,7 @@
             </a>
         </div>
     </footer>
-    <script src="script.js"></script>
+    <div class="cursor-shadow" aria-hidden="true"></div>
+    <script src="assets/js/script.js"></script>
 </body>
 </html>
