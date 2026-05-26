@@ -1,13 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const sidebar = document.getElementById('sidebar-menu');
+    const closeBtn = sidebar ? sidebar.querySelector('.close-btn') : null;
     const menuLinks = sidebar ? sidebar.querySelectorAll('a') : [];
 
     const openMenu = () => {
         if (hamburger && sidebar) {
-            hamburger.classList.add('active');
             hamburger.setAttribute('aria-expanded', 'true');
-            hamburger.setAttribute('aria-label', 'Close menu');
             sidebar.classList.add('active');
             sidebar.setAttribute('aria-hidden', 'false');
             document.body.classList.add('menu-open');
@@ -16,9 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const closeMenu = () => {
         if (hamburger && sidebar) {
-            hamburger.classList.remove('active');
             hamburger.setAttribute('aria-expanded', 'false');
-            hamburger.setAttribute('aria-label', 'Open menu');
             sidebar.classList.remove('active');
             sidebar.setAttribute('aria-hidden', 'true');
             document.body.classList.remove('menu-open');
@@ -26,13 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     if (hamburger && sidebar) {
-        hamburger.addEventListener('click', () => {
-            if (sidebar.classList.contains('active')) {
-                closeMenu();
-            } else {
-                openMenu();
-            }
-        });
+        hamburger.addEventListener('click', openMenu);
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', closeMenu);
     }
 
     menuLinks.forEach((link) => {
@@ -53,6 +48,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const nextButton = slideshow.querySelector('.next-slide');
         const dotsContainer = slideshow.querySelector('.slide-dots');
         let activeIndex = 0;
+        let autoplay;
+        const shouldAutoplay = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
         if (!slides.length || !dotsContainer) {
             return;
@@ -77,40 +74,62 @@ document.addEventListener('DOMContentLoaded', () => {
             dot.className = 'slide-dot';
             dot.type = 'button';
             dot.setAttribute('aria-label', `Show ${slideTitle ? slideTitle.textContent : 'project'} slide`);
-            dot.addEventListener('click', () => showSlide(index));
+            dot.addEventListener('click', () => {
+                showSlide(index);
+                restartAutoplay();
+            });
             dotsContainer.appendChild(dot);
             return dot;
         });
 
         if (prevButton) {
-            prevButton.addEventListener('click', () => showSlide(activeIndex - 1));
+            prevButton.addEventListener('click', () => {
+                showSlide(activeIndex - 1);
+                restartAutoplay();
+            });
         }
 
         if (nextButton) {
-            nextButton.addEventListener('click', () => showSlide(activeIndex + 1));
+            nextButton.addEventListener('click', () => {
+                showSlide(activeIndex + 1);
+                restartAutoplay();
+            });
         }
 
+        const startAutoplay = () => {
+            if (!shouldAutoplay) {
+                return;
+            }
+
+            stopAutoplay();
+            autoplay = window.setInterval(() => {
+                showSlide(activeIndex + 1);
+            }, 4500);
+        };
+
+        const stopAutoplay = () => {
+            window.clearInterval(autoplay);
+        };
+
+        const restartAutoplay = () => {
+            stopAutoplay();
+            startAutoplay();
+        };
+
+        slideshow.addEventListener('pointerenter', stopAutoplay);
+        slideshow.addEventListener('pointerleave', startAutoplay);
+        slideshow.addEventListener('focusin', stopAutoplay);
+        slideshow.addEventListener('focusout', startAutoplay);
+
         showSlide(0);
+        startAutoplay();
     });
 
-    const cursorShadow = document.querySelector('.cursor-shadow');
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const coarsePointer = window.matchMedia('(pointer: coarse)').matches;
+    const goTopBtn = document.getElementById('goTopBtn');
 
-    if (cursorShadow && !reducedMotion && !coarsePointer) {
-        window.addEventListener('pointermove', (event) => {
-            cursorShadow.classList.add('visible');
-            cursorShadow.style.left = `${event.clientX}px`;
-            cursorShadow.style.top = `${event.clientY}px`;
-        });
-
-        document.querySelectorAll('a, button, input, textarea').forEach((element) => {
-            element.addEventListener('pointerenter', () => cursorShadow.classList.add('cursor-pop'));
-            element.addEventListener('pointerleave', () => cursorShadow.classList.remove('cursor-pop'));
-        });
-
-        document.addEventListener('mouseleave', () => {
-            cursorShadow.classList.remove('visible');
+    if (goTopBtn) {
+        goTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         });
     }
 });

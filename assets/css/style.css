@@ -26,9 +26,10 @@ html{
 body{
     font-family: Arial, Helvetica, sans-serif;
     background:
-        radial-gradient(circle at top left, rgba(0,170,255,0.18), transparent 32rem),
+        radial-gradient(circle at top left, rgba(0,170,255,0.12), transparent 32rem),
         radial-gradient(circle at top right, rgba(246,166,35,0.12), transparent 30rem),
         var(--bg);
+    background-attachment: fixed;
     color: var(--text);
     line-height: 1.6;
     overflow-x: hidden;
@@ -105,8 +106,6 @@ header{
     background: none;
     border: none;
     padding: 0;
-    position: relative;
-    z-index: 1002;
 }
 
 .bar{
@@ -117,38 +116,22 @@ header{
     transition: all 0.3s ease;
 }
 
-.hamburger.active .bar:nth-child(1){
-    transform: translateY(9.5px) rotate(45deg);
-    background-color: var(--brand-blue);
-}
-
-.hamburger.active .bar:nth-child(2){
-    opacity: 0;
-    transform: translateX(8px);
-}
-
-.hamburger.active .bar:nth-child(3){
-    transform: translateY(-9.5px) rotate(-45deg);
-    background-color: var(--brand-blue);
-}
-
 #sidebar-menu{
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: fixed;
-    top: 0;
-    left: 0;
+    inset: 0;
     background:
-        radial-gradient(circle at 20% 15%, rgba(0,170,255,0.18), transparent 18rem),
-        radial-gradient(circle at 80% 90%, rgba(246,166,35,0.14), transparent 16rem),
-        rgba(16,17,20,0.985);
+        radial-gradient(circle at 18% 18%, rgba(0,170,255,0.22), transparent 18rem),
+        linear-gradient(145deg, #0b0d10 0%, #11151b 54%, #0e0e0e 100%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 3rem 1.5rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 1001;
+    z-index: 3000;
     overflow-y: auto;
 }
 
@@ -160,30 +143,52 @@ header{
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1.1rem;
+    gap: 1.35rem;
     padding-left: 0;
     text-align: center;
 }
 
 #sidebar-menu ul li a{
     color: var(--text);
-    font-size: clamp(1.6rem, 8vw, 2.35rem);
+    font-size: clamp(1.25rem, 6vw, 1.7rem);
     text-decoration: none;
-    display: inline-flex;
-    min-width: 11rem;
-    justify-content: center;
+    display: inline-block;
+    min-width: min(17rem, 78vw);
+    padding: 0.55rem 1rem;
+    border-radius: 8px;
+    transition: color 0.2s ease, background-color 0.2s ease, text-shadow 0.2s ease;
 }
 
-.mobile-menu-logo{
+#sidebar-menu ul li a:hover{
+    color: var(--brand-blue);
+    background-color: rgba(0,170,255,0.1);
+    text-shadow: 0 0 8px rgba(0,170,255,0.65);
+    transform: none;
+}
+
+#sidebar-menu ul li a.active{
+    color: #111;
+    background-color: var(--accent);
+    text-shadow: none;
+}
+
+.close-btn{
     position: absolute;
-    top: 1.1rem;
-    left: 1.2rem;
-    display: none;
+    top: 20px;
+    right: 25px;
+    font-size: 2rem;
+    line-height: 1;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: 0.25rem;
+    transition: color 0.2s ease;
+    z-index: 3001;
 }
 
-.mobile-menu-logo img{
-    width: 82px;
-    display: block;
+.close-btn:hover{
+    color: var(--brand-blue);
 }
 
 .btn{
@@ -422,7 +427,7 @@ article h2.section-title{
     display: flex;
     justify-content: center;
     gap: 0.45rem;
-    padding: 0.8rem;
+    padding: 1rem 0.8rem 1.1rem;
 }
 
 .slide-dot{
@@ -777,37 +782,13 @@ footer a:hover{
     border-radius: 50%;
     cursor: pointer;
     font-weight: bold;
-    transition: transform 0.2s ease, background-color 0.2s ease;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 #goTopBtn:hover{
     transform: translateY(-2px);
     background-color: #ffc04d;
-}
-
-.cursor-shadow{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 34px;
-    height: 34px;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(0,170,255,0.32), rgba(0,170,255,0));
-    pointer-events: none;
-    transform: translate(-50%, -50%);
-    opacity: 0;
-    transition: opacity 0.25s ease, width 0.2s ease, height 0.2s ease;
-    z-index: 9999;
-    mix-blend-mode: screen;
-}
-
-.cursor-shadow.visible{
-    opacity: 1;
-}
-
-.cursor-shadow.cursor-pop{
-    width: 52px;
-    height: 52px;
+    box-shadow: 0 0 16px rgba(246,166,35,0.28);
 }
 
 @keyframes fadeInIntro{
@@ -856,10 +837,6 @@ footer a:hover{
         display: flex;
     }
 
-    .mobile-menu-logo{
-        display: block;
-    }
-
     article{
         padding: 4rem 1.2rem;
     }
@@ -881,13 +858,34 @@ footer a:hover{
     }
 
     .slide-track{
+        aspect-ratio: auto;
+        min-height: 0;
+    }
+
+    .slide{
+        position: static;
+        display: none;
+        opacity: 1;
+        transform: none;
+        pointer-events: auto;
+        transition: none;
+    }
+
+    .slide.active{
+        display: block;
+        transform: none;
+    }
+
+    .slide img{
         aspect-ratio: 4 / 3;
-        min-height: 240px;
+        height: auto;
+        object-fit: cover;
     }
 
     .slide-control{
         width: 38px;
         height: 38px;
+        top: 38%;
     }
 
     .slide figcaption{
@@ -896,6 +894,15 @@ footer a:hover{
         border-left: none;
         border-right: none;
         border-bottom: none;
+        padding: 1rem;
+        gap: 0.35rem;
+    }
+
+    .slide-dots{
+        border-top: 1px solid var(--border);
+        margin-top: 0;
+        padding-top: 1rem;
+        padding-bottom: 1.35rem;
     }
 
     .about-content{
@@ -926,20 +933,10 @@ footer a:hover{
         font-size: clamp(2.15rem, 15vw, 3.25rem);
     }
 
-    .logo img,
-    .mobile-menu-logo img{
+    .logo img{
         width: 70px;
     }
 
-    .slide-track{
-        min-height: 210px;
-    }
-}
-
-@media (pointer: coarse), (prefers-reduced-motion: reduce){
-    .cursor-shadow{
-        display: none;
-    }
 }
 
 @media (prefers-reduced-motion: reduce){
